@@ -10,11 +10,11 @@ import android.widget.EditText
 import com.codetest.R
 
 
-class AddDialogFragment : DialogFragment() {
+class AddLocationDialogFragment : DialogFragment() {
 
     companion object {
         fun show(fragmentManager: FragmentManager) {
-            val dialog = AddDialogFragment()
+            val dialog = AddLocationDialogFragment()
             dialog.show(fragmentManager, "ADD")
         }
     }
@@ -24,7 +24,7 @@ class AddDialogFragment : DialogFragment() {
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val inflater = LayoutInflater.from(activity?.baseContext).inflate(R.layout.add_dialog, null)
+        val inflater = LayoutInflater.from(activity?.baseContext).inflate(R.layout.dialog_add_location, null)
 
         val builder = AlertDialog.Builder(activity)
             .setView(inflater)

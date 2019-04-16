@@ -8,11 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.codetest.R
 import com.codetest.main.model.WeatherInfo
-import com.codetest.main.ui.AddDialogFragment
-import com.codetest.main.ui.CitiesListViewHolder
+import com.codetest.main.ui.AddLocationDialogFragment
+import com.codetest.main.ui.LocationViewHolder
 import kotlinx.android.synthetic.main.activity_main.*
 
-class WeatherForecastActivity : AppCompatActivity(), View.OnClickListener, AddDialogFragment.Listener {
+class WeatherForecastActivity : AppCompatActivity(), View.OnClickListener, AddLocationDialogFragment.Listener {
 
     private var adapter = ListAdapter()
     private val list: ArrayList<WeatherInfo> = arrayListOf()
@@ -20,34 +20,6 @@ class WeatherForecastActivity : AppCompatActivity(), View.OnClickListener, AddDi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        list.add(
-            WeatherInfo(
-                resources.getColor(R.color.blue),
-                "Paris",
-                "15°C " + String(Character.toChars(WeatherInfo.getEmojiUnicode("sunny")))
-            )
-        )
-        list.add(
-            WeatherInfo(
-                resources.getColor(R.color.grey),
-                "Stockholm",
-                "5°C " + String(Character.toChars(WeatherInfo.getEmojiUnicode("rainy")))
-            )
-        )
-        list.add(
-            WeatherInfo(
-                resources.getColor(R.color.blue),
-                "Paris",
-                "15°C " + String(Character.toChars(WeatherInfo.getEmojiUnicode("blurry")))
-            )
-        )
-        list.add(
-            WeatherInfo(
-                resources.getColor(R.color.grey),
-                "Stockholm",
-                "5°C " + String(Character.toChars(WeatherInfo.getEmojiUnicode("tornado")))
-            )
-        )
 
         adapter = ListAdapter()
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -58,21 +30,12 @@ class WeatherForecastActivity : AppCompatActivity(), View.OnClickListener, AddDi
     }
 
     override fun onClick(v: View?) {
-        AddDialogFragment.show(this.supportFragmentManager)
+        AddLocationDialogFragment.show(this.supportFragmentManager)
     }
 
     override fun onSimpleDialogResult(value: String) {
         // TODO  post city name to add in the list
 
-        list.add(
-            WeatherInfo(
-                resources.getColor(R.color.grey),
-                value,
-                "5°C " + String(Character.toChars(WeatherInfo.getEmojiUnicode("rainy")))
-            )
-        )
-
-        adapter.notifyDataSetChanged()
     }
 
 
@@ -82,11 +45,11 @@ class WeatherForecastActivity : AppCompatActivity(), View.OnClickListener, AddDi
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-            return CitiesListViewHolder.create(parent)
+            return LocationViewHolder.create(parent)
         }
 
         override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
-            (viewHolder as? CitiesListViewHolder)?.setup(list[position])
+            (viewHolder as? LocationViewHolder)?.setup(list[position])
         }
     }
 }

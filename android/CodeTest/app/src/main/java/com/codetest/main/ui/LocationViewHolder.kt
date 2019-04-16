@@ -6,16 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import com.codetest.R
 import com.codetest.main.model.WeatherInfo
-import kotlinx.android.synthetic.main.info.view.*
+import kotlinx.android.synthetic.main.location.view.*
 
 
-class CitiesListViewHolder private constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class LocationViewHolder private constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     companion object {
-        fun create(parent: ViewGroup): CitiesListViewHolder {
+        fun create(parent: ViewGroup): LocationViewHolder {
             val inflater = LayoutInflater.from(parent.context)
-            val view = inflater.inflate(R.layout.info, parent, false)
-            return CitiesListViewHolder(view)
+            val view = inflater.inflate(R.layout.location, parent, false)
+            return LocationViewHolder(view)
         }
     }
 
