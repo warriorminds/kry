@@ -25,6 +25,10 @@ class WeatherForecastActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
+    }
+
+    override fun onResume() {
+        super.onResume()
         fetchLocations()
     }
 
