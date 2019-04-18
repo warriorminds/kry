@@ -49,7 +49,6 @@
                     android:layout_gravity="bottom|end"
                     android:layout_margin="@dimen/fab_margin"
                     android:background="@color/colorPrimary"
-                    android:scaleType="fitXY"
                     app:srcCompat="@drawable/round_add_white_48dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"/>
