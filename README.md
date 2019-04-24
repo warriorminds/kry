@@ -17,6 +17,6 @@ Nice to haves (optional):
 
 Spend two to four hours working on this assignment - make sure to finish the issues you start.
 
-Put the code in a repository GitHub and send us the link (niklas.holmqvist@kry.se) when you're done. 
+Put the code in a GitHub repository and send us the link (niklas.holmqvist@kry.se) when you're done. 
 
 Good luck! ☺️
