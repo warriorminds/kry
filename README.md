@@ -1,7 +1,7 @@
 # KRY code assignment
 One of our developers built a simple weather reporting app. The app has a list of locations with waether infornmation. Locations are fetched using a HTTP GET but the server is a bit flakey and fails sometimes. 
 
-Unfortunately the app is not complete and its up to you to complete the app. There is a wishlist for features to implemnt and some nice to have (bonus) features. 
+Unfortunately the app is not complete and its up to you to complete it. There is a wishlist for features to implemnt and some nice to have (bonus) features. 
 
 Wish List (required):
 
