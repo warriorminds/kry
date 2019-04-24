@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class WeatherForecastActivity : AppCompatActivity() {
 
     private var adapter = ListAdapter()
-    private var list: List<Location> = arrayListOf()
+    private var locations: List<Location> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +37,7 @@ class WeatherForecastActivity : AppCompatActivity() {
             if (response == null) {
                 showError()
             } else {
-                list = response
+                locations = response
                 adapter.notifyDataSetChanged()
             }
         }
@@ -54,7 +54,7 @@ class WeatherForecastActivity : AppCompatActivity() {
 
     private inner class ListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         override fun getItemCount(): Int {
-            return list.size
+            return locations.size
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -62,7 +62,7 @@ class WeatherForecastActivity : AppCompatActivity() {
         }
 
         override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
-            (viewHolder as? LocationViewHolder)?.setup(list[position])
+            (viewHolder as? LocationViewHolder)?.setup(locations[position])
         }
     }
 }
