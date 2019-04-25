@@ -1,13 +1,17 @@
 # KRY app code assignment
-One of our developers built a simple weather reporting app. The app has a list of locations with waether information. Locations are fetched using a HTTP GET but the server is a bit flakey and sometimes fail. 
+One of our developers built a simple weather reporting app. The app has a list of locations with weather information. Locations are fetched using a HTTP GET but the server is a bit flakey and sometimes fail. 
 
-Unfortunately the app is not complete and its up to you to complete it. There is a backlog of features to implement and some nice to have (bonus) features. 
+Unfortunately the app is not complete and it's up to you to complete it. There is a backlog of features to implement and some nice to have (bonus) features. 
 
 Backlog (required):
 
-- Implement the functionality to add a new location (post: https://app-code-test.kry.pet/locations, body: { id: "location_id",
-name: "location_name", status: "status", temperature: 20}) 
-- Implement the functionality to remove a location (delete: https://app-code-test.kry.pet/locations/:id)
+- Implement the functionality to add a new location 
+  - post: https://app-code-test.kry.pet/locations
+  - body: { id: "random string", name: "location name", status: "SUNNY", temperature: 20}
+  - header: ApiKey
+- Implement the functionality to remove a location 
+  - delete: https://app-code-test.kry.pet/locations/:id
+  - header: ApiKey
 
 Nice to haves (optional):
 
