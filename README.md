@@ -9,6 +9,8 @@ The backend server is a bit unstable which the app needs to handle.
 
 We need 2 new features in this task: *add* and *remove* locations.
 
+All API requests require a `X-Api-Key` HTTP header. One `X-Api-Key` is generated for you on app install and is used when fetching current stored locations.
+
 ### 1. Add a new location 
 
 Implement the functionality to add a new location. 
@@ -61,6 +63,8 @@ Provide name of location and weather together with temperature. All fields are r
 Implement the functionality to remove a location. Parameter `:id` is required to identify which location should be deleted.
 
 **URL** : `https://app-code-test.kry.pet/locations/:id`
+
+**Required header**: `X-Api-Key`
 
 **Method**: `DELETE`
 
