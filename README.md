@@ -3,17 +3,90 @@ One of our developers built a simple weather reporting app. The app has a list o
 
 Unfortunately the app is not complete and it's up to you to complete it. There is a backlog of features to implement and some nice to have (bonus) features. 
 
-Backlog (required):
+The backend server is a bit unstable which the app needs to handle.
 
-- Implement the functionality to add a new location 
-  - post: https://app-code-test.kry.pet/locations
-  - body: { id: "random string", name: "location name", status: "SUNNY", temperature: 20}
-  - header: ApiKey
-- Implement the functionality to remove a location 
-  - delete: https://app-code-test.kry.pet/locations/:id
-  - header: ApiKey
+## Backlog (required):
 
-Nice to haves (optional):
+We need 2 new features in this task: *add* and *remove* locations.
+
+All API requests require a `X-Api-Key` HTTP header. One `X-Api-Key` is generated for you on app install and is used when fetching current stored locations.
+
+### 1. Add a new location 
+
+Implement the functionality to add a new location. 
+
+**URL** : `https://app-code-test.kry.pet/locations`
+
+**Required header**: `X-Api-Key`
+
+**Method**: `POST`
+
+**Data constraints**
+
+Provide name of location and weather together with temperature. All fields are required except `id`. If `id` is omitted, one will be created for you.
+
+```json
+{
+    "id": "optional string",
+    "name": "location name",
+    "status": "SUNNY",
+    "temperature": 20
+}
+```
+
+#### Success Response
+
+**Code** : `200`
+
+**Content** : 
+```json
+{
+    "id": "optional string",
+    "name": "location name",
+    "status": "SUNNY",
+    "temperature": 20
+}
+```
+
+#### Error Response
+
+**Condition** : If required field is missing
+
+**Code** : `400`
+
+##### Or unknown
+
+**Code** : `500`
+
+### 2. Remove a location 
+
+Implement the functionality to remove a location. Parameter `:id` is required to identify which location should be deleted.
+
+**URL** : `https://app-code-test.kry.pet/locations/:id`
+
+**Required header**: `X-Api-Key`
+
+**Method**: `DELETE`
+
+**Data constraints**
+
+`id` of location
+
+#### Success Response
+
+**Code** : `200`
+
+#### Error Response
+
+**Condition** : If `id` missing or invalid.
+
+**Code** : `400`
+
+##### Or unknown
+
+**Code** : `500`
+
+## Nice to haves (optional):
 
 - Add nice animations
 - Improvements to code
