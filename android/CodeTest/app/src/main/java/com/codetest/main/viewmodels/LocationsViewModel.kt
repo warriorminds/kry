@@ -17,7 +17,6 @@ class LocationsViewModel @Inject constructor(
     var locations: MutableLiveData<LocationsApiState> = MutableLiveData()
 
     fun retrieveLocations() {
-        locations.value = LocationsApiState.Loading
         viewModelScope.launch {
             locationsRepository.getWeatherLocations().collect {
                 locations.value = it
@@ -26,7 +25,6 @@ class LocationsViewModel @Inject constructor(
     }
 
     fun addLocation(location: Location) {
-        locations.value = LocationsApiState.Loading
         viewModelScope.launch {
             locationsRepository.addWeatherLocation(location).collect {
                 locations.value = it
@@ -35,7 +33,6 @@ class LocationsViewModel @Inject constructor(
     }
 
     fun removeLocation(location: Location) {
-        locations.value = LocationsApiState.Loading
         viewModelScope.launch {
             locationsRepository.removeLocation(location).collect {
                 locations.value = it

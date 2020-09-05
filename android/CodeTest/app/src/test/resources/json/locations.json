@@ -1,0 +1,34 @@
+{
+  "locations": [
+    {
+      "id": "83d7164b-9164-4682-a197-0ce54182554a",
+      "name": "Stockholm",
+      "status": "RAINY",
+      "temperature": 9
+    },
+    {
+      "id": "27c892a9-01db-435c-9222-d63e5c44bc59",
+      "name": "Paris",
+      "status": "LIGHTENING",
+      "temperature": 7
+    },
+    {
+      "id": "afd5b3e8-8a1f-467b-8ad2-337dafeca236",
+      "name": "London",
+      "status": "RAINY",
+      "temperature": 2
+    },
+    {
+      "id": "e51145c9-4fcc-4928-8d53-23a646b99be4",
+      "name": "Oslo",
+      "status": "BARELY_SUNNY",
+      "temperature": 8
+    },
+    {
+      "id": "6f50dfd2-5d22-470a-a123-fe8c692f3e74",
+      "name": "dfhj",
+      "status": "CLOUDY",
+      "temperature": 2
+    }
+  ]
+}

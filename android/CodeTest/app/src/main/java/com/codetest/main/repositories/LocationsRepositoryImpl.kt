@@ -12,6 +12,7 @@ class LocationsRepositoryImpl @Inject constructor(
     private val weatherService: LocationApiService
 ) : LocationsRepository {
     override suspend fun getWeatherLocations() = flow {
+        emit(LocationsApiState.Loading)
         try {
             val response = weatherService.getLocations()
             if (response.isSuccessful) {
@@ -29,6 +30,7 @@ class LocationsRepositoryImpl @Inject constructor(
     }.flowOn(Dispatchers.IO)
 
     override suspend fun addWeatherLocation(location: Location) = flow {
+        emit(LocationsApiState.Loading)
         try {
             val response = weatherService.addLocation(location)
             if (response.isSuccessful) {
@@ -48,6 +50,7 @@ class LocationsRepositoryImpl @Inject constructor(
         .flowOn(Dispatchers.IO)
 
     override suspend fun removeLocation(location: Location) = flow {
+        emit(LocationsApiState.Loading)
         try {
             val response = weatherService.removeLocation(location.id!!)
             if (response.isSuccessful) {
