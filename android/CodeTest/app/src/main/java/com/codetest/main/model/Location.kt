@@ -1,7 +1,5 @@
 package com.codetest.main.model
 
-import com.google.gson.JsonObject
-
 enum class Status(val value: Int) {
     CLOUDY(0x2601),
     SUNNY(0x2600),
@@ -16,25 +14,15 @@ enum class Status(val value: Int) {
     RAINY(0x1F327);
 
     companion object {
-        fun from(string: String): Status = values().first { it.name == string }
+        fun from(string: String): Status = values().first { it.name == string.toUpperCase() }
+
+        fun from(position: Int): Status = values()[position]
     }
 }
 
-class Location(
+data class Location(
     val id: String?,
     val name: String?,
     val temperature: String?,
     val status: Status
-) {
-
-    companion object {
-        fun from(jsonObject: JsonObject): Location {
-            return Location(
-                jsonObject.get("id").asString,
-                jsonObject.get("name").asString,
-                jsonObject.get("temperature").asString,
-                Status.from(jsonObject.get("status").asString)
-            )
-        }
-    }
-}
+)

@@ -2,7 +2,7 @@ package com.codetest.main
 
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
-import com.codetest.CodeTestApplication
+import com.codetest.WeatherApplication
 import java.util.*
 
 class KeyUtil {
@@ -12,7 +12,7 @@ class KeyUtil {
     }
 
     private fun preferences(): SharedPreferences =
-        PreferenceManager.getDefaultSharedPreferences(CodeTestApplication.appContext())
+        PreferenceManager.getDefaultSharedPreferences(WeatherApplication.appContext())
 
     fun getKey(): String {
         preferences().getString(KEY, null)?.let {

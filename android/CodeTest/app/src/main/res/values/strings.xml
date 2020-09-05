@@ -4,4 +4,30 @@
     <string name="error_title">Error</string>
     <string name="error_message">Something went wrong</string>
     <string name="ok">OK</string>
+    <string name="location_name">Location Name</string>
+    <string name="temperature">Temperature</string>
+    <string name="add_location">Add Location</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+    <string name="error_loading_locations">Error loading locations.</string>
+    <string name="retry">Retry</string>
+    <string name="location_name_error">Location name cannot be empty</string>
+    <string name="temperature_error">Temperature cannot be empty</string>
+    <string name="error_adding_location">Error adding location.</string>
+    <string name="empty_error">Add all data to add location.</string>
+    <string name="remove_success">Remove location success.</string>
+
+    <string-array name="status_array">
+        <item>Cloudy</item>
+        <item>Sunny</item>
+        <item>Mostly Sunny</item>
+        <item>Partly Sunny</item>
+        <item>Partly Sunny Rain</item>
+        <item>Thunder Cloud and Rain</item>
+        <item>Tornado</item>
+        <item>Barely Sunny</item>
+        <item>Lightening</item>
+        <item>Snow Cloud</item>
+        <item>Rainy</item>
+    </string-array>
 </resources>
